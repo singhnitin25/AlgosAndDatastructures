@@ -30,11 +30,9 @@ def hour_glass_sum(arr)
       top = arr[i][j..j+2].sum
 
       # Sum of mid element
-
       mid = arr[i+1][j+1]
 
       # Sum of bottom 3 element
-
       bottom = arr[i+2][j..j+2].sum
 
       hour_glass = top + mid + bottom
