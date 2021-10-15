@@ -42,6 +42,16 @@ class LinkedList
     @tail = node
   end
 
+  # O(1)
+  def deletion_at_top
+    if @head
+      puts "Deleting from the top #{@head.data}"
+      @head = @head.next
+    else
+      puts "Linked List is already empty."
+    end
+  end
+
   def print
     node = @head
     nodes = [] # We can avoid this auxiliary space by printing node in loop itself
@@ -49,7 +59,7 @@ class LinkedList
       nodes << node.data
       node = node.next
     end
-    puts nodes.join('->')
+    puts nodes.join(' -> ')
   end
 end
 
@@ -57,6 +67,7 @@ ll = LinkedList.new
 ll.insert_at_top(10)
 ll.insert_at_top(20)
 ll.insert_at_top(30)
-ll.print # 30 (Head) -> 20 -> 10 (tail)
 ll.insert_at_end(5)
 ll.print # 30 (Head) -> 20 -> 10 -> 5 (tail)
+ll.deletion_at_top
+ll.print # 20 (Head) -> 10 -> 5 (tail)
