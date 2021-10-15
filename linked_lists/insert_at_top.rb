@@ -15,8 +15,10 @@ class LinkedList
     @head = nil
   end
 
-  def append_at_top(data)
+  # Time Complexity O(1)
+  def insert_at_top(data)
     node = Node.new(data)
+    puts "Inserting #{data} at the top."
     if @head
       node.next = @head
     end
@@ -32,12 +34,11 @@ class LinkedList
   end
 end
 
-
 # Case 1 when Linked List is empty i.e. Head is null
 ll = LinkedList.new
-ll.append_at_top(10)
+ll.insert_at_top(10)
 ll.print # 10
 
 # Case 2 when Linked list is not empty
-ll.append_at_top(20)
+ll.insert_at_top(20)
 ll.print # 20 -> 10
