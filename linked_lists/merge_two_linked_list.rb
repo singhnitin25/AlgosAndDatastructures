@@ -70,6 +70,9 @@ i = ll1.head
 j = ll2.head
 linked_list_c_data = []
 
+# Time Complexity
+# If Length of Linked List A in 'N' and Linked List of Length B is 'M'
+# O (N + M)
 while (i || j)
   break unless i || j
 
