@@ -1,4 +1,5 @@
 # Ruby provides inbuilt thread safe Queue Class
+# FIFO
 
 class CustomQueue
   attr_reader :items
