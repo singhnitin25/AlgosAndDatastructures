@@ -18,6 +18,7 @@ end
 
 # Dynamic Programming approach
 # Memoize the result of already calculated values
+# 1. Top Down Approach - Harder ----> Easier
 @result = {}
 def fib(n)
   return n if n == 0
@@ -33,8 +34,22 @@ def fib(n)
     end
   end
 end
-puts fib(9)
-
 for i in 1..80
   puts "i = #{i} fib(#{i})=#{fib(i)}"
+end
+
+# DP approach 2
+# 2. Bottom Up approach => Easier ---> Harder
+# Let's say if we want to calculate fib(7) then we have to calculate fib(7) to fib(1)
+# So why can't we start fib(1) and go to fib(7)
+@result = { 1 => 1, 2 => 1 }
+def fib(n)
+  for i in 3..n
+    @result[i] = @result[i-1] + @result[i-2]
+  end
+  @result
+end
+for i in 1..80
+  fib(i)
+  puts "i = #{i} fib(#{i})=#{@result[i]}"
 end
